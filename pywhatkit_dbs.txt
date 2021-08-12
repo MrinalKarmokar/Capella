@@ -1,0 +1,6 @@
+--------------------
+Date: 1:7:2021
+Time: 1:55
+Phone number: +917977483716
+Message: Copy this link to your browser to verify your phone no. http://127.0.0.1:8000/accounts/verify-phone/c76b2f4a-428b-492c-902a-7e0133d18600
+--------------------

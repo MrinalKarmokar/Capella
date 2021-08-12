@@ -1,0 +1,46 @@
+{% extends '../base.html' %}
+
+{% block title %}Blog{% endblock title %}
+
+{% block body %}
+
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <p>{{message}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div class="container">
+    <div class="mb-4 bg-light">
+        <div class="pb-5">
+            <h1 class="display-5 fw-bold">{{posts.title}}</h1>
+            <div class="row">
+                <div class="col-md-8"><p class="fs-4">{{posts.desc1}}</p></div>
+                <div class="col-md-4"><img src="{{posts.link}}" class="img-fluid img-thumbnail mb-1"></div>
+                <p class="fs-4">{{posts.desc2}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row ms-3 mb-3">
+        {% for post in random_posts %}
+        {% with count=forloop.counter %}
+        <div class="col-12 col-sm-6 col-md-3 mb-3">
+            <div class="card" style="width: 16rem;">
+                {% for opost in other_posts_list %}
+                {% if forloop.counter == count %}
+                <div class="card-body overflow-hidden">
+                    <h5 class="card-title">{{opost.title}}</h5>
+                    <p class="card-text">{{opost.desc1|truncatewords:15}}</p>
+                    <a href="http://127.0.0.1:8000/blog/{{post}}" class="card-link">Read More</a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endwith %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,101 @@
+{% extends '../base.html' %}
+
+{% block title %}Signup{% endblock title %}
+
+{% block body %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% block header %}
+
+{% load static %}
+
+  <link rel="stylesheet" href="{% static 'pages/css/index.css' %}"/>
+
+  <div class="loading"></div>
+
+  <video class="video-container" muted autoplay loop>
+    <source src="../../media/pages/videos/bg_jewelry_video.mov">
+  </video>
+
+{% endblock header %}
+
+<div class="container-fluid text-light">
+  <div class="row">
+    <div class="col-md-5 mx-auto my-5">
+      <div id="second">
+        <div class="myform form">
+          <div class="logo mb-3">
+            <div class="col-md-12 text-light text-center">
+              <h1>Create your Capella Account</h1>
+            </div>
+          </div>
+          <div>
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              <p>{{message}}</p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+          </div>
+          <form method="POST" action="" name="registration">{% csrf_token %}
+            <div class="form-group text-start">
+              <div class="row my-2">
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                  <input type="text" name="first_name" class="form-control" placeholder="First name" aria-describedby="emailHelp" aria-label="First name" required>
+                </div>
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                  <input type="text" name="last_name" class="form-control" placeholder="Last name" aria-describedby="emailHelp" aria-label="Last name" required>
+                </div>
+              </div>
+              <div class="form-group my-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+              </div>
+              <div class="row my-2">
+                <label for="phoneInput" class="form-label my-1">Phone No.</label>
+                <div class="col-3 col-md-2">
+                  <input class="form-control" value="+91" aria-label="country-code" readonly>
+                </div>
+                <div class="col-9 col-md-10">
+                  <input class="form-control" name="phone" type="tel" placeholder="Phone No. (Whatsapp)" aria-label="default input example" required>
+                </div>
+              </div>
+              <div class="form-group my-3">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" name="password" autocomplete="on" id="password" class="form-control" aria-describedby="pwnote" placeholder="Enter Password" required>
+              </div>
+              <div class="form-group my-3">
+                <label for="exampleInputEmail1">Repeat Password</label>
+                <input type="password" name="password2" autocomplete="on" id="password2" class="form-control" aria-describedby="pwnote" placeholder="Repeat Password" required>
+              </div>
+              <div class="col-md-12 text-center mb-3 my-4">
+                <button type="submit" name="createbtn" class="btn btn-dark shadow">
+                  Create Account
+                </button>
+              </div>
+              <div class="col-md-12 my-3">
+                <div class="form-group">
+                  <p class="text-center">
+                    <a href="{% url 'login' %}" id="signin">Already have an account?</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'pages/js/disable_right_click.js' %}"></script>
+<script src="{% static 'pages/js/prevert_going_back.js' %}"></script>
+<script src="{% static 'accounts/js/preloader.js' %}"></script>
+
+{% endblock body %}
+
+{% block footer %} {% include '../pages/components/footer2.html' %} {% endblock footer %}

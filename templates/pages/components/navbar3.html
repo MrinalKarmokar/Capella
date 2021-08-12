@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-light mx-4 mt-3" href="#">
+            <h1 style="font-family:'Great Vibes';">Capella</h1>
+        </a>
+        <button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav flex-grow-1 justify-content-evenly">
+                <li class="nav-item text-center"><a class="nav-link active" href="{% url 'rings' %}">Rings</a></li>
+                <li class="nav-item text-center"><a class="nav-link active" href="{% url 'earrings' %}">Earrings</a></li>
+                <li class="nav-item text-center"><a class="nav-link active" href="{% url 'necklaces' %}">Neckwear</a></li>
+                <li class="nav-item text-center"><a class="nav-link active" href="{% url 'bracelets' %}">Bracelets &amp; Bangles</a></li>
+                <li class="nav-item text-center"><a class="nav-link active" href="{% url 'earrings' %}">Solitaire</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,52 @@
+{% extends '../base.html' %}
+
+{% block title %}Change Email Address{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+{% block navbar2 %}{% endblock navbar2 %}
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" class="mx-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_account' %}">Your Account</a></li>
+    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_profile' %}">Your Profile</a></li>
+    <li class="breadcrumb-item fst-italic active" aria-current="page">Change Email</li>
+  </ol>
+</nav>
+
+<div class="container py-3">
+    <h1 class="text-center my-4" style="font-family:'Great Vibes';">Change your Email</h1>
+    <div class="col-md-8 order-md-1 mx-auto my-auto">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <p>{{message}}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+        <form action="" method="POST" name="emailUpdate" class="row g-3 my-4">
+        {% csrf_token %}
+            <div class="form-group my-3">
+                <label for="exampleFormControlInput1" class="form-label">Current Email</label>
+                <input type="text" class="form-control" placeholder="New Email" aria-describedby="emailHelp" aria-label="Email" value="{{email_old}}" readonly>
+            </div>
+            <div class="form-group my-3">
+                <label for="exampleFormControlInput1" class="form-label">New Email</label>
+                <input type="text" id="emailUpdate" name="emailUpdate" class="form-control" placeholder="Enter new email" aria-describedby="emailHelp" aria-label="Email" value="" required>
+            </div>
+            <div class="form-group my-3">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" name="password" id="password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password" value="" required>
+            </div>
+            <div class="col-md-12 text-center mb-3 my-4">
+                <button type="submit" name="savechanges" class="btn btn-dark btn-block tx-tfm shadow">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'pages/js/disable_right_click.js' %}"></script>
+<script src="{% static 'pages/js/prevert_going_back.js' %}"></script>
+
+{% endblock body %}

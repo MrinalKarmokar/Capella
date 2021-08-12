@@ -1,0 +1,100 @@
+{% extends '../base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% block body %}
+
+<div class="container text-dark">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="col-md-8 mx-auto my-5">
+                <div id="first">
+                    <div class="myform form my-5">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-left">
+                            <h1>Address</h1>
+                            <h6>Urvashi Apt, Central Park, Nalasopara</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto my-5">
+                <div id="first">
+                    <div class="myform form my-5">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-left">
+                            <h1>Phone</h1>
+                            <h6>987654321</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto my-5">
+                <div id="first">
+                    <div class="myform form my-5">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-left">
+                            <h1>Email</h1>
+                            <h6>info@capella.com</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="col-md-8 mx-auto my-5">
+                <div id="first">
+                    <div class="myform form my-5">
+                        <div class="logo mb-3">
+                            <div class="col-md-12 text-center">
+                                <h1>Login</h1>
+                                <h6>To your Capella account</h6>
+                            </div>
+                        </div>
+                        
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                <p>{{message}}</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                        
+                        <form action="" method="POST" name="login">
+                        {% csrf_token %}
+                            <div class="form-group my-3">
+                                <label for="exampleInputEmail1">Email / Phone no.</label>
+                                <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Email / Phone No." value="">
+                            </div>
+                            <div class="form-group my-3">
+                                <label for="exampleInputEmail1">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password" value="">
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="rememberme" value="remember-me"> Remember me
+                                </label>
+                            </div>
+                            <div class="col-md-12 text-center my-4">
+                                <button type="submit" name="loginbtn" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                            </div>
+                            <hr class="featurette-divider">
+                            <div class="form-group my-4">
+                                <p class="text-center">Don't have account?
+                                    <a href="/signup" id="signup">Sign up here</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

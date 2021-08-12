@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link type="text/css" href="{% static 'base/css/bootstrap.css' %}" rel="stylesheet">
+    <link type="text/css" rel="icon" href="{% static 'base/icons/favicon.ico' %}">
+
+    <link type="text/css" rel="preconnect" href="https://fonts.gstatic.com">
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+
+    <title>{% block title %}{% endblock title %} | Capella</title>
+
+    <style>
+      html,
+      body{
+          height: 100%;
+          width: 100%;
+          font-family: 'Baloo Chettan 2', cursive;
+      }
+    </style>
+    
+    {% endblock head %}
+  </head>
+  <body class="bg-light">
+
+    <!-- navbar -->
+    {% block navbar %} {% include "pages/components/navbar.html" %} {% endblock navbar %}
+    {% block navbar2 %} {% include "pages/components/navbar2.html" %} {% endblock navbar2 %}
+
+    <!-- body -->
+    {% block body %} {% endblock body %}
+
+    <script src="{% static 'base/js/jquery.js' %}"></script>
+    <script src="{% static 'base/js/bootstrap.js' %}"></script>
+    <script src="{% static 'base/js/popper.js' %}"></script>
+
+  </body>
+</html>
+
+<!-- footer -->
+{% block footer %} 
+<h2 class="text-center">You design, We create</h2>
+{% include "pages/components/footer.html" %}
+{% endblock footer %}

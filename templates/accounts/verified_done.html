@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+{% block title %}Verification Successful{% endblock title %}
+
+{% block body %}
+
+    {% block navbar %}{% endblock navbar %}
+    {% block navbar2 %}{% endblock navbar2 %}
+
+    {% block header %}
+
+    <div class="jumbotron">
+        <h1 class="display-4">{{message}}</h1>
+    </div>
+
+{% endblock body %}
+
+{% block footer %} {% include '../pages/components/footer2.html' %} {% endblock footer %}

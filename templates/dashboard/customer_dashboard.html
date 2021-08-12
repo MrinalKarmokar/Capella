@@ -1,0 +1,83 @@
+{% extends '../base.html' %}
+
+{% block title %}Customer-Dashboard{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% include 'dashboard/components/navbar_dashboard.html' %}
+{% include 'dashboard/components/sidebar_dashboard.html' %}
+
+<!-- alerts -->
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <p>{{message}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in customer %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{data.first_name}}</td>
+                <td>{{data.last_name}}</td>
+                <td>{{data.phone}}</td>
+                <td>{{data.email}}</td>
+                <td><a href="{% url 'customer_detail_dashboard' data.id %}" type="button" class="btn btn-secondary btn-sm">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <nav class="pagination justify-content-end">
+        <div class="btn-group btn-group-sm me-2 mt-4" role="group" aria-label="Page No.">
+        {% if orders.has_previous %}
+            <a href="??page={{customer.previous_page_number}}" type="button" class="btn btn-secondary">Previous</a>
+        {% else %}
+            <button type="button" class="btn btn-secondary disabled">Previous</button>
+        {% endif %}
+            <button type="button" class="btn btn-dark">{{customer.number}}</button>
+        {% if orders.has_next %}
+            <a href="?page={{customer.next_page_number}}" type="button" class="btn btn-secondary">Next</a>
+        {% else %}
+            <button type="button" class="btn btn-secondary disabled">Next</button>
+        {% endif %}
+        </div>
+    </nav>
+</div>
+
+
+
+<script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'base/js/popper.js' %}"></script>
+{% comment %} <script src="{% static 'dashboard/js/load_data.js' %}"></script> {% endcomment %}
+
+{% endblock body %}
+
+{% block footer %}
+<footer>
+    <div class="container-fluid text-dark">
+        <h2 class="text-center mt-3">You design, We create</h2>
+        <hr class="featurette-divider">
+        <p class="mt-auto text-center">
+        <h1 class="text-center" style="font-family:'Great Vibes';">Capella</h1>
+        </p>
+    </div>
+</footer>
+{% endblock footer %}

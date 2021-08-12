@@ -1,0 +1,271 @@
+{% extends '../base.html' %}
+
+{% block title %}Bracelets{% endblock title %}
+
+{% block body %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'pages/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/footer.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/cardhover.css' %}">
+
+{% include 'pages/components/navbar3.html' %}
+
+<nav aria-label="Rings family of products" id="chapternav" class="chapternav shadow-sm" data-analytics-region="family browser">
+    <div class="chapternav-wrapper">
+        <ul class="chapternav-items">
+            <li class="chapternav-item chapternav-item-Fashion">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Fashion">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Fashion</span>
+
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Halo">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Halo">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Halo</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-3-stone">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="3-stone">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">3-stone</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Promise">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Promise">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Promise</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Semi-mount">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a aria-label="Compare iPad models" class="chapternav-link" href="#" data-analytics-title="Semi-mount">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Semi-Mount</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Signet">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="AWARD/SIGNET">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Signet</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Engagement">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="/in/ipad-keyboards/" data-analytics-title="Engagement">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Engagement</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Solitaire">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Solitaire">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Solitaire</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Bridal-set">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a aria-label="Shop iPad Accessories" class="chapternav-link" href="#" data-analytics-title="Bridal-Set">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Bridal Set</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Wedding">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Wedding">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Wedding</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Anniversary">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Anniversary">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Anniversary</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-Eternity">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Eternity">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Eternity</span>
+                </a>
+            </li>
+        </ul>
+        <div class="chapternav-paddles">
+            <button class="chapternav-paddle chapternav-paddle-left" aria-hidden="true" disabled></button>
+            <button class="chapternav-paddle chapternav-paddle-right" aria-hidden="true" disabled></button>
+        </div>
+    </div>
+</nav>
+
+<div class="comtainer-fluid">
+    <div style="text-align: center;"><br></div>
+    <section class="text-center text-white call-to-action" style="background: url('https://source.unsplash.com/1600x500/?jewellery,diamond,gemstone');background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Custom Rings</h1>
+                    <h2>"Some knots are meant to be tied forever"</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="text-align: center;"><br></div>
+    <section class="text-center bottom-down">
+        <h1 class="text-center flex-grow-1 justify-content-center align-items-center heading-content">About Rings</h1>
+        <p class="text-center flex-grow-1 justify-content-center para-content"><br>Rings are emblem of companionship through time, a symbol of devotion and an agreement between parties. There are various styles of rings available, these types are given below. Rings can be made from metals like gold and silver
+            as well as designed with diamonds. Here at Capella you design your own ring as it represents yourself and is unique in its own way and we make it exactly according to your design as well as your budget.Select your components,
+            submit your design for it and you are good to go.<br><br></p>
+        <h1>Ring Styles</h1>
+    </section>
+    <div style="text-align: center;"><br></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Fashion">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">FASHION</h4>
+                        <p class="description">Fashion rings are worn partly for fashion or styling purposes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Halo"></div>
+                    <div class="box-content">
+                        <h4 class="title">Halo</h4>
+                        <p class="description">Halo rings have a setting that encircles a center gemstone in a collection of round pave or micro pave diamonds(or gemstones).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="3 - Stone">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">3 - Stone</h4>
+                        <p class="description">Three stone rings are set of three gemstones or mixed colour gemstones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Fashion">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Promise</h4>
+                        <p class="description">Promise rings can be made of any metal and incorporate any gemstone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Halo"></div>
+                    <div class="box-content">
+                        <h4 class="title">Semi-mount</h4>
+                        <p class="description">Semi-mount rings has mounting that are already set with melee or baguette diamonds or coloured gemstones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="3 - Stone">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">AWARD/SIGNET</h4>
+                        <p class="description">Award/Signet rings have letters or design carved on it. It is a ring decorated with special design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Fashion">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Engagement</h4>
+                        <p class="description">Engagement rings consist of atleast one diamond or valuable gemstone set upon a quality metal such as gold and platinum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Halo"></div>
+                    <div class="box-content">
+                        <h4 class="title">SOLITAIRE</h4>
+                        <p class="description">Solitaire rings will have a single diamond rock mounted on a jewellery set.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="3 - Stone">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Bridal-set</h4>
+                        <p class="description">Bridal-set consists of engagement ring and matching band for the bride.The set features two rings that usually match in style or colour.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Fashion">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">wedding band</h4>
+                        <p class="description">Wedding bands are traditionally a plain metal band or diamond encrusted eternity band.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Halo"></div>
+                    <div class="box-content">
+                        <h4 class="title">ANNIVERSARY BAND</h4>
+                        <p class="description">Anniversary bands can be made of plain metal with some design on it or encrusted with a diamond.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="3 - Stone">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">ETERNITY BAND</h4>
+                        <p class="description">Eternity bands comprise of precious metal(usually gold) set with a continuous line of identically cut gemstones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center;"><br></div>
+ </div>
+{% endblock body %}

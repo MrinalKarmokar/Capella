@@ -1,0 +1,106 @@
+{% extends '../base.html' %}
+
+{% block title %}Place Order{% endblock title %}
+
+{% block body %}
+
+{% comment %} {% block navbar2 %}{% endblock navbar2 %} {% endcomment %}
+
+<!-- alerts -->
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <p>{{message}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div class="container p-4 text-center">
+    <h1 style="font-family:'Great Vibes';">Order Ornaments</h1>
+    <h6>Enter details of your ornament</h6>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mx-auto p-4">
+        <img src="../../media/orders/images/banner-place-order.jpg" class="img-fluid rounded float-start" alt="steps for custom jewellery">
+        </div>
+        <div class="col-md-5 pe-md-5 mx-auto my-2">
+            <div class="form">
+                <form action="" method="POST" enctype="multipart/form-data" name="ornament_order">
+                {% csrf_token %}
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label"><h6>Submit your ornament design / reference / photo</h6></label>
+                            <input class="form-control" type="file" name="ref_image" accept="image/*" id="ref_image" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="seeAnotherField" class="form-label"><h6>Select your metal of choice</h6></label>
+                            <select class="form-select" name="metal_choice" id="seeAnotherField" aria-label="select-fields" required>
+                                <option selected>Choose..</option>
+                                <option value="yellow_gold">Yellow Gold</option>
+                                <option value="rose_gold">Rose Gold</option>
+                                <option value="white_gold">White Gold</option>
+                                <option value="silver">Silver</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="otherFieldDiv">
+                            <label for="min-range" class="form-label"><h6>Gold Quality</h6></label>
+                            <select class="form-control" name="gold_quality" id="otherField">
+                                <option selected>Choose..</option>
+                                <option value="14k">14 carat</option>
+                                <option value="18k">18 carat</option>
+                            </select>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label for="exampleFormControlInput1" class="form-label"><h6>₹ Tell us your budget</h6></label>
+                            <input type="text" name="budget" class="form-control" placeholder="Ex: ₹30,000" aria-describedby="money" aria-label="Maximum amount spend" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="quantity-input" class="form-label"><h6># Quantity</h6></label>
+                            <select class="form-control" name="quantity" required>
+                                <option selected>Choose..</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="designinsight-input" class="form-label"><h6>Design Insight</h6></label>
+                            <select class="form-control" name="design_insight" required>
+                                <option selected>Choose..</option>
+                                <option value="1">I have image of exactly what I want</option>
+                                <option value="2">I have some images and knowledge of what I want to make</option>
+                                <option value="3">I have some general ideas</option>
+                                <option value="4">I have no idea, need help!</option>
+                            </select>
+                        </div>
+                        <div class="form-floating mt-4 mb-3">
+                            <textarea class="form-control" name="instructions" placeholder="Type in your prefered language" id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea"><h6 class="ps-3">Any other instructions</h6></label>
+                        </div>                      
+                        <div class="text-center my-4">
+                            <button type="submit" name="order_ring_btn" class="btn btn-dark shadow">
+                            Get estimate
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'pages/js/disable_right_click.js' %}"></script>
+<script src="{% static 'order/js/dependentfield.js' %}"></script>
+
+{% endblock body %}

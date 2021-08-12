@@ -1,0 +1,107 @@
+.navbar.navbar-dark.navbar-expand-md.fixed-top.textwhite-50.bg-dark.text-white-50.navigation-clean {
+    background-color: #000 !important;
+    opacity: 0.8;
+}
+
+.nav-link.active {
+    color: #fff;
+    font-size: 13px;
+}
+
+.navbar-brand.link-light {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* body {
+    padding-top: 50px;
+} */
+
+.product.earring {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.product h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.product h2 {
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.product.links {
+    font-size: 21px;
+    margin-bottom: 80px;
+}
+
+.product .links .learn {
+    margin-right: 20px;
+}
+
+.product earring {
+    background-color: #f9f9f9;
+}
+
+.img-fluid {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.img-fluid {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.heading-content {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+
+.para-content {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0%;
+}
+
+.para-content-2 {
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.para-content-2 {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+
+.padding-content-image {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.bottom-down {
+    padding-bottom: 5%;
+}
+
+.paddin-up {
+    padding-top: 5%;
+}
+
+.call-to-action {
+    position: relative;
+    background-color: #343a40;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}

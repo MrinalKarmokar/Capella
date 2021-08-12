@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+
+{% block title %}Login & Security{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+{% block navbar2 %}{% endblock navbar2 %}
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" class="mx-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_account' %}">Your Account</a></li>
+    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_profile' %}">Your Profile</a></li>
+    <li class="breadcrumb-item fst-italic active" aria-current="page">Change Name</li>
+  </ol>
+</nav>
+
+<div class="container py-3">
+    <h1 class="text-center my-4" style="font-family:'Great Vibes';">Change your name</h1>
+    <div class="col-md-8 order-md-1 mx-auto my-auto">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <p>{{message}}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+        <form action="" method="POST" name="nameUpdate" class="row g-3 my-4">
+        {% csrf_token %}
+            <div class="row my-2">
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                  <input type="text" id="firstNameUpdate" name="firstnameUpdate" class="form-control" placeholder="First name" aria-describedby="emailHelp" aria-label="First name" value="{{first_name}}" required>
+                </div>
+                <div class="col">
+                  <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                  <input type="text" id="lastNameUpdate" name="lastnameUpdate" class="form-control" placeholder="Last name" aria-describedby="emailHelp" aria-label="Last name" value="{{last_name}}" required>
+                </div>
+            </div>
+            <div class="col-md-12 text-center mb-3 my-4">
+                <button type="submit" name="savechanges" class="btn btn-dark btn-block tx-tfm shadow">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'pages/js/disable_right_click.js' %}"></script>
+<script src="{% static 'pages/js/prevert_going_back.js' %}"></script>
+
+{% endblock body %}

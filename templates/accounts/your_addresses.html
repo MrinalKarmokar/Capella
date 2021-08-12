@@ -1,0 +1,57 @@
+{% extends '../base.html' %}
+
+{% block title %}Your Account{% endblock title %}
+
+{% block body %}
+
+{% block navbar2 %}{% endblock navbar2 %}
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" class="mx-4" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_account' %}">Your Account</a></li>
+    <li class="breadcrumb-item fst-italic active" aria-current="page">Your Address</li>
+  </ol>
+</nav>
+
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <p>{{message}}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    {% if flat == "" %}
+        <div class="text-center text-lg-start d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <div class="my-4 mx-4">
+                    <div class="my-4 mx-4">
+                        <a href="{% url 'add_address' %}" class="btn btn-dark active" role="button" aria-disabled="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square my-1" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            Add Address
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elif flat != ""%}
+        <div class="text-center text-lg-start">
+            <div class="card-body">
+                <h1 class="card-title" style="font-family:'Great Vibes';">Your Address</h1>
+                <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
+                <p class="card-text">{{flat | title}}, <br>{{area | title}}, {%if landmark %} <br> Landmark: {{landmark | title}},{% endif %}<br> {{city | title}}, <br>{{state | title}}, {{zip}}</p>
+                <hr>
+                <p class="card-text">Phone: {{phone}} <br> Address type: {{type | title}}</p>
+                <a href="{% url 'change_address' %}" class="btn btn-dark nav-link active" role="button" aria-disabled="true">Change Address</a>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock body %}

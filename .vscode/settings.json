@@ -1,0 +1,15 @@
+{
+    "python.pythonPath": "C:\\Users\\Mrina\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "database": "capella_test",
+            "name": "Capella",
+            "username": "postgres"
+        }
+    ]
+}

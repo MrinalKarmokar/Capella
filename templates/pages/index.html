@@ -1,0 +1,51 @@
+{% extends '../base.html' %}
+
+{% block title %}Welcome{% endblock title %}
+
+{% block body %}
+
+{% comment %} {% include 'pages/components/guideModal.html' %} {% endcomment %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'pages/css/index.css' %}">
+
+<header>
+    <div class="loading"></div>
+
+    <video class="video-container" muted autoplay loop>
+        <source src="../../media/pages/videos/bg_jewelry_video.mov">
+    </video>
+</header>
+
+<div class="container">
+    <div class="container text-center text-light">
+        <div class="container">
+            <div class="wrapper">Welcome to<br><h1 style="font-family:'Great Vibes';">Capella</h1>
+                <div class="d-grid gap-2 col-12 mx-auto">
+                    <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg button shadow" type="button">Visit</a>
+                    make your custom jewellery
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'pages/js/disable_right_click.js' %}"></script>
+<script src="{% static 'accounts/js/preloader.js' %}"></script>
+
+{% endblock body %}
+
+{% block footer %}
+<footer class="index-footer">
+    <h2 class="text-center text-light">You design, We create</h2>
+    <div class="container-fluid">
+        <hr class="featurette-divider">
+        <p class="mt-auto text-center">
+        <h1 class="text-center text-light" style="font-family:'Great Vibes';">Capella</h1>
+        </p>
+    </div>
+</footer>
+{% endblock footer %}

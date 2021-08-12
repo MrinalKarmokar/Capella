@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html,
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+
+        .button {
+            background-color: #555555; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        
+        a {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>CAPELLA</h1>
+        <hr>
+        <h3>Hey, {{first_name}}!</h3>
+        <p>Click the button to change your account password</p>
+        <a href="http://127.0.0.1:8000/accounts/reset-password/{{uid}}/{{token}}" class="button"
+            role="button" data-bs-toggle="button">Verify Email</a>
+        <hr>
+        <p>NOTE: Please DON'T click the above button if you didn't try to change your Password for Capella account.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+element.style {
+    user-select: auto;
+}
+
+.chapternav {
+    background-color: #fbfbfd;
+}
+
+.chapternav {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(245, 245, 247, 0.6);
+}
+
+.chapternav {
+    background: rgba(245, 245, 247, 0.7);
+    padding: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    height: 100px;
+    z-index: 9987;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+user agent stylesheet nav {
+    display: block;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.chapternav-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 -.11765em;
+    padding: 0 14px;
+}
+
+.chapternav-items {
+    margin: 0 34px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    list-style: none;
+    padding-bottom: 50px;
+}
+
+a,
+.link {
+    color: #06c;
+    letter-spacing: inherit;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+.available-copy {
+    color: #666;
+}

@@ -1,0 +1,144 @@
+{% extends '../base.html' %}
+
+{% block title %}Customer-Dashboard{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% include 'dashboard/components/navbar_dashboard.html' %}
+{% include 'dashboard/components/sidebar_dashboard.html' %}
+
+<!-- alerts -->
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <p>{{message}}</p>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div class="container">
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6 my-2">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h4 class="card-text ms-2">{{customer.first_name | title}} {{customer.last_name | title}}</h4>
+        <table class="table table-dark">
+          <tbody>
+            <tr>
+              <th scope="row">Phone</th>
+              <td>{{customer.phone}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Email</th>
+              <td>{{customer.email}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Phone Verified</th>
+              <td>{{customerx.phone_is_verified}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Email Verified</th>
+              <td>{{customerx.email_is_verified}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-6 my-2">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        {% if customer_address != None %}
+        <h2>Address</h2>
+        <p class="card-text">{{customer_address.address_flat | title}}, {{customer_address.address_area | title}},
+        {%if customer_address.address_landmark %} <br> Landmark: {{customer_address.address_landmark | title}},
+        {% endif %}<br> {{customer_address.address_city | title}}, <br>{{customer_address.address_state | title}},
+        {{customer_address.address_zip}} <br> Address type: {{customer_address.address_type | title}}</p>
+        {% elif customer_address == None %}
+        <h2>Address: Empty</h2>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col my-2">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>
+        Orders
+        <a class="btn btn-secondary btn-sm my-1" href="{% url 'home' %}" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+        </svg>
+        </a>
+        </h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Order ID #</th>
+              <th scope="col">Image</th>
+              <th scope="col">Metal</th>
+              <th scope="col">Gold Quality</th>
+              <th scope="col">Budget ₹</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Instructions</th>
+              <th scope="col">Date & Time</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for data in customer_orders %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{data.order_id}}</td>
+              <td><a type="button" class="btn btn-secondary btn-sm" href="{{data.image_url.url}}">View</a></td>
+              {% if data.metal_choice == "yellow_gold" %}
+              <td>Yellow Gold</td>
+              {% elif data.metal_choice == "rose_gold" %}
+              <td>Rose Gold</td>
+              {% elif data.metal_choice == "white_gold" %}
+              <td>White Gold</td>
+              {% elif data.metal_choice == "silver" %}
+              <td>Silver</td>
+              {% endif %}
+              <td>{{data.gold_quality}}</td>
+              <td>{{data.budget}}</td>
+              <td>{{data.quantity}}</td>
+              {% if data.instructions == "" %}
+              <td>--</td>
+              {% elif data.instructions %}
+              <td><textarea class="form-control" id="Textarea" rows="1">{{data.instructions}}</textarea></td>
+              {% endif %}
+              <td>{{data.order_date}} | {{data.order_time}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'base/js/popper.js' %}"></script>
+
+<script>
+$('#example').popover('hide');
+$('#example').click(function() {
+
+  $('#example').popover('show');
+});
+</script>
+
+{% endblock body %}
+
+{% block footer %}
+<footer>
+  <div class="container-fluid text-dark mt-4">
+    <hr class="featurette-divider">
+    <p class="mt-auto text-center">
+    <h1 class="text-center" style="font-family:'Great Vibes';">Capella</h1>
+    </p>
+  </div>
+</footer>
+{% endblock footer %}

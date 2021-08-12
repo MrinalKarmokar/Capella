@@ -1,0 +1,102 @@
+{% extends '../base.html' %}
+
+{% block title %}Your Order{% endblock title %}
+
+{% block body %}
+
+{% block navbar2 %}{% endblock navbar2 %}
+
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    class="mx-4" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_account' %}">Your Account</a>
+        </li>
+        <li class="breadcrumb-item fst-italic active" aria-current="page">Your Orders</li>
+    </ol>
+</nav>
+
+<!-- alerts -->
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <p>{{message}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<div class="container p-2 text-center">
+    <h1 style="font-family:'Great Vibes';">Your Orders</h1>
+</div>
+
+<div class="container">
+    {% for data in ornament_orders %}
+    {% if forloop.counter == 1 %}
+        <p class="text-center mb-3"><a href="{% url 'place_order' %}" class="btn btn-dark">Place another order</a></p>
+    {% endif %}
+    <div class="card p-2 m-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                    <h5>Order {{forloop.counter}}</h5>
+                    <h6>#{{data.order_id}}</h6>
+                    <p>{{data.order_date}} {{data.order_time}}</p>
+                    <a href="{{data.image_url.url}}"><img src="{{data.image_url.url}}" class="img-fluid" alt="product image"></a>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                    {% if data.metal_choice == "yellow_gold" %}
+                        <p class="col-md-4">Metal: Yellow Gold</p>
+                    {% elif data.metal_choice == "rose_gold" %}
+                        <p class="col-md-4">Metal: Rose Gold</p>
+                    {% elif data.metal_choice == "white_gold" %}
+                        <p class="col-md-4">Metal: White Gold</p>
+                    {% elif data.metal_choice == "silver" %}
+                        <p class="col-md-4">Metal: Silver</p>
+                    {% endif %}
+                    {% if data.gold_quality != "---" %}
+                        <p class="col-md-4">Metal Quality: {{data.gold_quality}}</p>
+                    {% endif %}
+                        <p class="col-md-4">Budget: {{data.budget}}</p>
+                        <p>Quantity: {{data.quantity}}</p>
+                    {% if data.instructions %}
+                        <p>Instructions: {{data.instructions}}</p>
+                    {% endif %}
+                        <hr>
+                        <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
+                        <p class="card-text">{{flat | title}}, {{area | title}}, {%if landmark %} <br> Landmark: {{landmark | title}},{% endif %}<br> {{city | title}}, <br>{{state | title}}, {{zip}}</p>
+                        <hr>
+                        <p class="card-text">Phone: {{phone}} <br> Address type: {{type | title}}</p>
+                        {% comment %} <a href="{% url 'change_address' %}" class="btn btn-dark nav-link active" role="button" aria-disabled="true">Change Address</a> {% endcomment %}
+                        <div class="progress shadow-sm">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if not ornament_orders %}
+    <div class="row">
+        <div class="col-md-3 mx-auto">
+            <div id="first">
+                <div class="myform form my-3">
+                    <div class="card bg-light ms-3 mb-5" style="max-width: 20rem;">
+                        <div class="card-body">
+                            <div class="col-md-12 text-center mb-3 my-4">
+                                <p class="card-text">
+                                <h6>You havn't placed any order</h6>
+                                </p>
+                                <a type="button" href="{% url 'place_order' %}" class="btn btn-dark shadow">
+                                    Place Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock body %}

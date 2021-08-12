@@ -1,0 +1,145 @@
+{% extends '../base.html' %}
+
+{% block title %}Bracelets{% endblock title %}
+
+{% block body %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'pages/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/footer.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/cardhover.css' %}">
+
+{% include 'pages/components/navbar3.html' %}
+
+<nav aria-label="Bracelets family" id="chapternav" class="chapternav shadow-sm" data-analytics-region="family browser">
+    <div class="chapternav-wrapper">
+        <ul class="chapternav-items">
+            <li class="chapternav-item chapternav-item-line/tennis">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Bracelets">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Line/Tennis</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-link">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Bracelets">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Link</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-cuff">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Bracelets">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Cuff</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-bangle">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="Bracelets">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Bangle</span>
+                </a>
+            </li>
+        </ul>
+        <div class="chapternav-paddles">
+            <button class="chapternav-paddle chapternav-paddle-left" aria-hidden="true" disabled></button>
+            <button class="chapternav-paddle chapternav-paddle-right" aria-hidden="true" disabled></button>
+        </div>
+    </div>
+</nav>
+
+<div class="comtainer-fluid">
+    <div style="text-align: center;"><br></div>
+    <section class="text-center text-white call-to-action"
+        style="background: url('https://source.unsplash.com/1600x500/?jewellery,diamond,gemstone');background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Custom Earrings</h1>
+                    <h2>"We are just as charming as our bracelets"</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="text-align: center;"><br></div>
+    <section class="text-center bottom-down">
+        <h1 class="text-center flex-grow-1 justify-content-center align-items-center heading-content">About Bracelets
+        </h1>
+        <p class="text-center flex-grow-1 justify-content-center para-content"><br>A bracelet is best known as a symbol
+            of a relationship to someone. There are various styles of bracelets available, these types are given below.
+            Bracelets can be made from metals like gold and silver as well as designed with diamonds. Here
+            at Capella you design your own ring as it represents yourself and is unique in its own way and we make it
+            exactly according to your design as well as your budget. Select your components, submit your design for it
+            and you are good to go.<br><br></p>
+        <h1>Bracelet Styles</h1>
+    </section>
+
+    <div style="text-align: center;"><br></div>
+    <!--INFO SECTION CARDS-->
+    <section class="paddin-up">
+        <div class="container">
+            <div class="row">
+                <div class=" col-6 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="box-img"><img class="padding-content-image"
+                                src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="line">
+                        </div>
+                        <div class="box-content">
+                            <h4 class="title">Line/Tennis</h4>
+                            <p class="description">Line/Tennis type of bracelets of individual, flexible, links which
+                                are set with gemstones of the same size.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="box-img"><img class="padding-content-image"
+                                src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="link"></div>
+                        <div class="box-content">
+                            <h4 class="title">Link</h4>
+                            <p class="description">Link type of bracelets have chained design, smaller components of the
+                                overall structure are linked together or chained together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="box-img"><img class="padding-content-image"
+                                src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="cuff">
+                        </div>
+                        <div class="box-content">
+                            <h4 class="title">Cuff</h4>
+                            <p class="description">Cuff type of bracelets are piece of jewellery that goes around the
+                                wrist as decoration(cuff means that the bracelet is wide or thick or both).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4">
+                    <div class="box">
+                        <div class="box-img"><img class="padding-content-image"
+                                src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="bangle">
+                        </div>
+                        <div class="box-content">
+                            <h4 class="title">Bangle</h4>
+                            <p class="description">Bangles are inflexible but loose fitting bracelets, generally made
+                                out of some hard material like gold, silver, wood, plastic or ivory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="text-align: center;"><br></div>
+</div>
+
+{% endblock body %}

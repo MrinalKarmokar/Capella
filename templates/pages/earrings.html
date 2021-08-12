@@ -1,0 +1,219 @@
+{% extends '../base.html' %}
+
+{% block title %}Bracelets{% endblock title %}
+
+{% block body %}
+
+{% block navbar %}{% endblock navbar %}
+{% block navbar2 %}{% endblock navbar2 %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'pages/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/footer.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'pages/css/cardhover.css' %}">
+
+{% include 'pages/components/navbar3.html' %}
+
+<nav aria-label="iPad family of products" id="chapternav" class="chapternav shadow-sm" data-analytics-region="family browser">
+    <div class="chapternav-wrapper">
+        <ul class="chapternav-items">
+            <li class="chapternav-item chapternav-item-stud">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="stud">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Stud</span>
+
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-cluster">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="cluster">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Cluster</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-jacket">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="jackets">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Jackets</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-drop">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="drop">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Drop</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-dangle">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a aria-label="Compare iPad models" class="chapternav-link" href="#" data-analytics-title="dangle">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Dangle</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-chandelier">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="chandelier">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Chandelier</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-hoops">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="hoops">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Hoops</span>
+                    <!-- <span class="chapternav-new">New</span> -->
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-hinged/huggie">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a class="chapternav-link" href="#" data-analytics-title="hinged/huggie">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Hinged/Huggie</span>
+                </a>
+            </li>
+            <li class="chapternav-item chapternav-item-eartrim">
+                <img src="https://source.unsplash.com/50x50/?jewellery,diamond,gemstone">
+                <a aria-label="Shop iPad Accessories" class="chapternav-link" href="#" data-analytics-title="eartrim">
+                    <figure class="chapternav-icon"></figure>
+                    <span class="chapternav-label">Ear Trim</span>
+                </a>
+            </li>
+
+        </ul>
+        <div class="chapternav-paddles">
+            <button class="chapternav-paddle chapternav-paddle-left" aria-hidden="true" disabled></button>
+            <button class="chapternav-paddle chapternav-paddle-right" aria-hidden="true" disabled></button>
+        </div>
+    </div>
+</nav>
+
+<div class="comtainer-fluid">
+    <div style="text-align: center;"><br></div>
+    <section class="text-center text-white call-to-action" style="background: url('https://source.unsplash.com/1600x500/?jewellery,diamond,gemstone');background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Custom Earrings</h1>
+                    <h2>"A smile is the prettiest thing you can wear. Or maybe, earrings are"</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="text-align: center;"><br></div>
+    <section class="text-center bottom-down">
+        <h1 class="text-center flex-grow-1 justify-content-center align-items-center heading-content">About Earrings</h1>
+        <p class="text-center flex-grow-1 justify-content-center para-content"><br>Through the years among women, earrings are a symbol of womanhood and a sign of identification. There are various styles of earrings available, these types are given below. Earrings can be made from metals like gold and silver as well as designed
+            with diamonds. Here at Capella you design your own earring as it represents yourself and is unique in its own way and we make it exactly according to your design as well as your budget.Select your components, submit your design for it and
+            you are good to go.<br><br></p>
+        <h1>Earring Styles</h1>
+    </section>
+    <div style="text-align: center;"><br></div>
+    <!--INFO SECTION CARDS-->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="stud">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Stud</h4>
+                        <p class="description">Studs are often built around an earring casing which can be pounded or shaped from a precious metal like gold or silver and then fitted with some kind of gemstones that serves as central ornament to the stud.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="cluster"></div>
+                    <div class="box-content">
+                        <h4 class="title">Cluster</h4>
+                        <p class="description">Cluster earrings are types of earrings with crystals or gemstones all grouped together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="jackets">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Jackets</h4>
+                        <p class="description">Jacket is an extra component that goes along with your existing earring post or stud, the jacket is designed to wrap around your stud earrings and tend to add sparkle and beauty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="drop">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Drop</h4>
+                        <p class="description">Drop earrings are those that "drop" just below the earlobe drop earrings are simple pieces with attachments like gemstones, beads or charms dropping from the base of the earring. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="dangle"></div>
+                    <div class="box-content">
+                        <h4 class="title">Dangle</h4>
+                        <p class="description">Dangle earrings are those that hang and swing to and fro or from side to side. Dangle earring typically hangs below the earlobe and move.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="chandelier">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Chandelier</h4>
+                        <p class="description">Chandelier type of earrings are made from a combination of beads or jewels connected with metal, hanging freely in a cascading shape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="hoops">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Hoops</h4>
+                        <p class="description">Hoops earrings are a staple in earring collection and these can be made in a large variety of sizes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Hinged/huggie"></div>
+                    <div class="box-content">
+                        <h4 class="title">Hinged/Huggie</h4>
+                        <p class="description">Hinged/Huggie are a style of little hoop earring that "hug" the earlobe whether they are simply silver, gold or rosegold plated huggies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4">
+                <div class="box">
+                    <div class="box-img"><img class="padding-content-image" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" alt="Ear-Trim">
+                    </div>
+                    <div class="box-content">
+                        <h4 class="title">Ear Trim</h4>
+                        <p class="description">Ear Trim earrings are placed or fixed onto the earlobe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;"><br></div>
+</div>
+
+{% endblock body %}
