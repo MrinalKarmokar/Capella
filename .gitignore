@@ -1,3 +1,14 @@
+accounts/__pycache__/
+accounts/migrations/__pycache__/
+blog/__pycache__/
+blog/migrations/__pycache__/
+capella/__pycache__/
+dashboard/__pycache__/
+dashboard/migrations/__pycache__/
+order/__pycache__/
+order/migrations/__pycache__/
+pages/__pycache__/
+pages/migrations/__pycache__/
 __pycache__/
 *.py[cod]
 *$py.class
