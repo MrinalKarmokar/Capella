@@ -21,7 +21,29 @@
 {% endfor %}
 
 <div class="container">
-    Dashboard
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Total Orders</h2>
+          <h1>{{count_orders}}</h1>
+          <a href="{% url 'order_dashboard' %}" class="btn btn-outline-light" type="button">View</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Total Customers</h2>
+          <h1>{{count_cust}}</h1>
+          <a href="{% url 'customer_dashboard' %}" class="btn btn-outline-dark" type="button">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+        <button class="btn btn-primary btn-lg" type="button">Example button</button>
+      </div>
+    </div>
 </div>
 
 <script src="{% static 'base/js/jquery.js' %}"></script>
