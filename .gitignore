@@ -1,8 +1,10 @@
-Capella.session.sql
-pywhatkit_dbs.txt
 */*/*/__pycache__/
 */*/__pycache__/
 */__pycache__/
 __pycache__/
 *.py[cod]
 *$py.class
+
+Capella.session.sql
+pywhatkit_dbs.txt
+capella/__pycache__/settings.cpython-39.pyc
