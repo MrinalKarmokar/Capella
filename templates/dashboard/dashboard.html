@@ -22,18 +22,20 @@
 
 <div class="container">
     <div class="row align-items-md-stretch">
-      <div class="col-md-6">
+      <div class="col-md-6 my-1">
         <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <h2>Total Orders</h2>
-          <h1>{{count_orders}}</h1>
-          <a href="{% url 'order_dashboard' %}" class="btn btn-outline-light" type="button">View</a>
+          <h1>Total Orders: {{count_orders}}</h1>
+          <div class="d-grid gap-2 col-6">
+            <a href="{% url 'order_dashboard' %}" class="btn btn-outline-light" type="button">View</a>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 my-1">
         <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Total Customers</h2>
-          <h1>{{count_cust}}</h1>
-          <a href="{% url 'customer_dashboard' %}" class="btn btn-outline-dark" type="button">View</a>
+          <h1>Total Customers: {{count_cust}}</h1>
+          <div class="d-grid gap-2 col-6">
+            <a href="{% url 'customer_dashboard' %}" class="btn btn-outline-dark" type="button">View</a>
+          </div>
         </div>
       </div>
     </div>
