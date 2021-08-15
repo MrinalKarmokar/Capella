@@ -4,8 +4,3 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
-Capella.session.sql
-pywhatkit_dbs.txt
-capella/__pycache__/settings.cpython-39.pyc
-dashboard/__pycache__/views.cpython-39.pyc
