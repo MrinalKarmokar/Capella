@@ -150,36 +150,11 @@
 }
 
 
-.cid {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-color: honeydew;
-}
-
 */ section,
 .container,
 .container-fluid {
   position: relative;
   word-wrap: break-word;
-}
-
-/* .maintxt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%)
-} */
-.row {
-  --mdb-gutter-x: 1.5rem;
-  --mdb-gutter-y: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: calc(var(--mdb-gutter-y)*-1);
-  margin-right: calc(var(--mdb-gutter-x)/-2);
-  margin-left: calc(var(--mdb-gutter-x)/-2);
 }
 
 /*Video section */
