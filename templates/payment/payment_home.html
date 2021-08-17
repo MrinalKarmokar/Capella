@@ -8,14 +8,6 @@
 
 {% block navbar2 %}{% endblock navbar2 %}
 
-<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" class="mx-4" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_account' %}">Your Account</a></li>
-    <li class="breadcrumb-item fst-italic"><a class="link-info" href="{% url 'your_profile' %}">Your Profile</a></li>
-    <li class="breadcrumb-item fst-italic active" aria-current="page">Change Name</li>
-  </ol>
-</nav>
-
 <div class="container py-3">
     <h1 class="text-center my-4" style="font-family:'Great Vibes';">Capella</h1>
     <div class="col-md-8 order-md-1 mx-auto my-auto">
@@ -28,14 +20,8 @@
         <form method="POST" class="row g-3 my-4">
         {% csrf_token %}
             <div class="row my-2">
-                {% comment %} <div class="col">
-                  <label for="forname" class="form-label">Name</label>
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" aria-describedby="nameHelp" aria-label="Name" required>
-                </div>
-                <div class="col"> {% endcomment %}
                 <label for="foramount" class="form-label">Amount</label>
                 <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter Amount" aria-describedby="amountHelp" aria-label="Amount" {% if amount %}value="{{amount}}"{% endif %} required>
-                {% comment %} </div> {% endcomment %}
             </div>
             <div class="col-md-12 text-center mb-3 my-4">
                 {% if payment %}
@@ -58,15 +44,11 @@ var options = {
     "description": "Test Transaction",
     "image": "http://127.0.0.1:8000/media/logo.png",
     "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "handler": function (response){
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature)
-    },
+    "callback_url": "{% url 'payment_success' %}",
     "prefill": {
         "name": "{{firstname}} {{lastname}}",
         "email": "{{email}}",
-        "contact": "{{phone}}",
+        "contact": "{{phone}}"
     },
     "notes": {
         "address": "Razorpay Corporate Office"
@@ -76,15 +58,6 @@ var options = {
     }
 };
 var rzp1 = new Razorpay(options);
-rzp1.on('payment.failed', function (response){
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-});
 document.getElementById('rzp-button1').onclick = function(e){
     rzp1.open();
     e.preventDefault();

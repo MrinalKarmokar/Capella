@@ -1,5 +1,6 @@
 import razorpay
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Payment_info
 
@@ -35,3 +36,4 @@ def payment_home_view(request, *args, **kwargs):
     
     else:
         return render(request, "payment/payment_home.html", context)
+
