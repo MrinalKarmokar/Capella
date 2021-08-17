@@ -37,3 +37,8 @@ def payment_home_view(request, *args, **kwargs):
     else:
         return render(request, "payment/payment_home.html", context)
 
+
+@csrf_exempt
+def payment_success_view(request, *args, **kwargs):
+    context = {}
+    return render(request, "payment/success.html", context)
