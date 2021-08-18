@@ -136,9 +136,9 @@
 .cid {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: honeydew;
-  background: linear-gradient(#CCFFF2, #F0FFF0);
-  background-image: linear-gradient(rgb(204, 255, 242), rgb(240, 255, 240));
+  background-color: #f2f2f2;
+  background: linear-gradient(#777676, #777676);
+  background-image: linear-gradient(rgb(119, 118, 118), rgb(230, 230, 230));
   background-position-x: initial;
   background-position-y: initial;
   background-size: initial;
@@ -160,5 +160,37 @@
 /*Video section */
 #vid {
   padding: 100px 0px;
-  background: #CCFFF2;
+  background: #a4a7a6;
 }
+
+.textover img { width: 100%; }
+.textover { max-width: 600px; }
+.textover { position: relative; } /* REQUIRED */
+.textover figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.textover{
+  border-radius: 25px;
+}
+.textover figcaption {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+}
+.styll{
+  text-transform: uppercase;
+  color:black;
+  font-weight: bold;
+}
+@media (max-width: 767px){
+.styll {
+    font-size: 22px;
+}
+}
+
