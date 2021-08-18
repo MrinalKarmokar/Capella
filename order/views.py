@@ -96,6 +96,10 @@ def your_order_view(request, *args, **kwargs):
     
     try:
         gold_diamond_order_ins = ornamentOrder.objects.filter(account_id=id).all()
+        for data in gold_diamond_order_ins:
+            if data.approved and not data.paid:
+                messages.info(request, f"Order Approved for Order No. {data.order_id}")
+
         context = {
             'ornament_orders': gold_diamond_order_ins,
             'first_name': first_name,
