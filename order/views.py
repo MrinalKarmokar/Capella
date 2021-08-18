@@ -96,9 +96,11 @@ def your_order_view(request, *args, **kwargs):
     
     try:
         gold_diamond_order_ins = ornamentOrder.objects.filter(account_id=id).all()
+        order_id_list = []
         for data in gold_diamond_order_ins:
             if data.approved and not data.paid:
-                messages.info(request, f"Order Approved for Order No. {data.order_id}")
+                order_id_list.append(data.order_id)
+                messages.info(request, f"Order Approved for Order No. #{data.order_id}")
 
         context = {
             'ornament_orders': gold_diamond_order_ins,
@@ -113,6 +115,7 @@ def your_order_view(request, *args, **kwargs):
             'state': state,
             'zip': zip,
             'type': type,
+            'order_id_list': order_id_list,
         }
 
         return render(request, 'order/your_order.html', context)

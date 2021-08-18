@@ -17,9 +17,13 @@
 
 <!-- alerts -->
 {% for message in messages %}
-<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-    <p>{{message}}</p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+    {% for data in order_id_list %}
+        {% if forloop.counter == forloop.parentloop.counter %}
+        <a class="link-dark" href="#{{data}}">{{message}}</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {% endif %}
+    {% endfor %}
 </div>
 {% endfor %}
 
@@ -30,10 +34,10 @@
 <div class="container">
     {% for data in ornament_orders %}
     {% if forloop.counter == 1 %}
-        <p class="text-center mb-3"><a href="{% url 'place_order' %}" class="btn btn-dark">Place another order</a></p>
+        <p class="text-center mb-3"><a href="{% url 'place_order' %}" class="btn btn-dark shadow">Place another order</a></p>
     {% endif %}
     <div class="card p-2 m-2">
-        <div class="card-body">
+        <div id="{{data.order_id}}" class="card-body">
             <div class="row">
                 <div class="col-4">
                     <h5>Order {{forloop.counter}}</h5>
