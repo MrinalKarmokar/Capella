@@ -16,11 +16,13 @@ from accounts.decorators import staff_check
 def dashboard_view(request, *args, **kwargs):
     '''Dashboard for all user info'''
 
-    cust = Account.objects.all()
+    cust = Account.objects.all().count()
+    count_orders = ornamentOrder.objects.all().count()
 
     context = {
         'page_title': "Dashboard",
-        'customer': cust,
+        'count_cust': cust,
+        'count_orders': count_orders,
     }
     return render(request, "dashboard/dashboard.html", context)
 

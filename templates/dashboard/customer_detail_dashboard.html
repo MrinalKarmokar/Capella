@@ -20,7 +20,7 @@
 </div>
 {% endfor %}
 
-<div class="container">
+<div class="container-fluid">
   <div class="row align-items-md-stretch">
     <div class="col-md-6 my-2">
       <div class="h-100 p-5 text-white bg-dark rounded-3">
@@ -104,11 +104,11 @@
               <td>{{data.gold_quality}}</td>
               <td>{{data.budget}}</td>
               <td>{{data.quantity}}</td>
-              {% if data.instructions == "" %}
+              {% comment %} {% if data.instructions == "" %}
               <td>--</td>
-              {% elif data.instructions %}
-              <td><textarea class="form-control" id="Textarea" rows="1">{{data.instructions}}</textarea></td>
-              {% endif %}
+              {% elif data.instructions %} {% endcomment %}
+              <td><textarea class="form-control" id="Textarea" rows="1"  disabled>Design Insight: {{data.design_insight}} {% if data.instructions %}|| {{data.instructions}} {% endif %}</textarea></td>
+              {% comment %} {% endif %} {% endcomment %}
               <td>{{data.order_date}} | {{data.order_time}}</td>
             </tr>
           {% endfor %}

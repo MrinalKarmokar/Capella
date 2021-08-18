@@ -20,49 +20,53 @@
 </div>
 {% endfor %}
 
-<div class="container">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Order ID #</th>
-                <th scope="col">Image</th>
-                <th scope="col">Metal</th>
-                <th scope="col">Gold Quality</th>
-                <th scope="col">Budget ₹</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Instructions</th>
-                <th scope="col">Date & Time</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for data in orders %}
-            <tr>
-                <th scope="row">{{ forloop.counter }}</th>
-                <td><a href="{% url 'customer_detail_dashboard' data.account_id %}">{{data.order_id}}</a></td>
-                <td><a type="button" class="btn btn-secondary btn-sm" href="{{data.image_url.url}}">View</a></td>
-                {% if data.metal_choice == "yellow_gold" %}
-                <td>Yellow Gold</td>
-                {% elif data.metal_choice == "rose_gold" %}
-                <td>Rose Gold</td>
-                {% elif data.metal_choice == "white_gold" %}
-                <td>White Gold</td>
-                {% elif data.metal_choice == "silver" %}
-                <td>Silver</td>
-                {% endif %}
-                <td>{{data.gold_quality}}</td>
-                <td>{{data.budget}}</td>
-                <td>{{data.quantity}}</td>
-                {% if data.instructions == "" %}
-                <td>--</td>
-                {% elif data.instructions %}
-                <td><textarea class="form-control" id="Textarea" rows="1">{{data.instructions}}</textarea></td>
-                {% endif %}
-                <td>{{data.order_date}} | {{data.order_time}}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="container-fluid">
+    <div class="col my-2">
+        <div class="h-100 p-5 bg-light border rounded-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Order ID #</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Metal</th>
+                        <th scope="col">Gold Quality</th>
+                        <th scope="col">Budget ₹</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Instructions</th>
+                        <th scope="col">Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for data in orders %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><a href="{% url 'customer_detail_dashboard' data.account_id %}">{{data.order_id}}</a></td>
+                        <td><a type="button" class="btn btn-secondary btn-sm" href="{{data.image_url.url}}">View</a></td>
+                        {% if data.metal_choice == "yellow_gold" %}
+                        <td>Yellow Gold</td>
+                        {% elif data.metal_choice == "rose_gold" %}
+                        <td>Rose Gold</td>
+                        {% elif data.metal_choice == "white_gold" %}
+                        <td>White Gold</td>
+                        {% elif data.metal_choice == "silver" %}
+                        <td>Silver</td>
+                        {% endif %}
+                        <td>{{data.gold_quality}}</td>
+                        <td>{{data.budget}}</td>
+                        <td>{{data.quantity}}</td>
+                        {% comment %} {% if data.instructions == "" %}
+                        <td>--</td>
+                        {% elif data.instructions %} {% endcomment %}
+                        <td><textarea class="form-control" id="Textarea" rows="1" disabled>Design Insight: {{data.design_insight}} {% if data.instructions %}|| {{data.instructions}} {% endif %}</textarea></td>
+                        {% comment %} {% endif %} {% endcomment %}
+                        <td>{{data.order_date}} | {{data.order_time}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
     <nav class="pagination justify-content-end">
         <div class="btn-group btn-group-sm me-2 mt-4" role="group" aria-label="Page No.">
         {% if orders.has_previous %}
@@ -78,7 +82,6 @@
         {% endif %}
         </div>
     </nav>
-
 </div>
 
 <script src="{% static 'base/js/jquery.js' %}"></script>
