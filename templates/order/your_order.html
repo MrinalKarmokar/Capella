@@ -39,35 +39,54 @@
                     <h5>Order {{forloop.counter}}</h5>
                     <h6>#{{data.order_id}}</h6>
                     <p>{{data.order_date}} {{data.order_time}}</p>
-                    <a href="{{data.image_url.url}}"><img src="{{data.image_url.url}}" class="img-fluid" alt="product image"></a>
+                    <a href="{{data.image_url.url}}"><img src="{{data.image_url.url}}" class="img-fluid border rounded-3" alt="product image"></a>
                 </div>
                 <div class="col-8">
                     <div class="row">
-                    {% if data.metal_choice == "yellow_gold" %}
-                        <p class="col-md-4">Metal: Yellow Gold</p>
-                    {% elif data.metal_choice == "rose_gold" %}
-                        <p class="col-md-4">Metal: Rose Gold</p>
-                    {% elif data.metal_choice == "white_gold" %}
-                        <p class="col-md-4">Metal: White Gold</p>
-                    {% elif data.metal_choice == "silver" %}
-                        <p class="col-md-4">Metal: Silver</p>
-                    {% endif %}
-                    {% if data.gold_quality != "---" %}
-                        <p class="col-md-4">Metal Quality: {{data.gold_quality}}</p>
-                    {% endif %}
-                        <p class="col-md-4">Budget: {{data.budget}}</p>
-                        <p>Quantity: {{data.quantity}}</p>
-                    {% if data.instructions %}
-                        <p>Instructions: {{data.instructions}}</p>
-                    {% endif %}
-                        <hr>
-                        <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
-                        <p class="card-text">{{flat | title}}, {{area | title}}, {%if landmark %} <br> Landmark: {{landmark | title}},{% endif %}<br> {{city | title}}, <br>{{state | title}}, {{zip}}</p>
-                        <hr>
-                        <p class="card-text">Phone: {{phone}} <br> Address type: {{type | title}}</p>
-                        {% comment %} <a href="{% url 'change_address' %}" class="btn btn-dark nav-link active" role="button" aria-disabled="true">Change Address</a> {% endcomment %}
-                        <div class="progress shadow-sm">
-                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="col-md-8">
+                            <div class="row">
+                            {% if data.metal_choice == "yellow_gold" %}
+                                <p class="col-md-4">Metal: Yellow Gold</p>
+                            {% elif data.metal_choice == "rose_gold" %}
+                                <p class="col-md-4">Metal: Rose Gold</p>
+                            {% elif data.metal_choice == "white_gold" %}
+                                <p class="col-md-4">Metal: White Gold</p>
+                            {% elif data.metal_choice == "silver" %}
+                                <p class="col-md-4">Metal: Silver</p>
+                            {% endif %}
+                            {% if data.gold_quality != "---" %}
+                                <p class="col-md-4">Metal Quality: {{data.gold_quality}}</p>
+                            {% endif %}
+                                <p class="col-md-4">Budget: {{data.budget}}</p>
+                                <p>Quantity: {{data.quantity}}</p>
+                            {% if data.instructions %}
+                                <p>Instructions: {{data.instructions}}</p>
+                            {% endif %}
+                                <hr>
+                                <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
+                                <p class="card-text">{{flat | title}}, {{area | title}}, {%if landmark %} <br> Landmark: {{landmark | title}},{% endif %}<br> {{city | title}}, <br>{{state | title}}, {{zip}}</p>
+                                <hr>
+                                <p class="card-text">Phone: {{phone}} <br> Address type: {{type | title}}</p>
+                                {% comment %} <a href="{% url 'change_address' %}" class="btn btn-dark nav-link active" role="button" aria-disabled="true">Change Address</a> {% endcomment %}
+                                {% comment %} <div class="progress shadow-sm">
+                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            {% if data.approved and not data.paid%}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-laughing" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M12.331 9.5a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zM7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5z"/>
+                            </svg> <b>Approved</b>
+                            <div class="d-grid gap-2 d-md-block my-2">
+                                <a href="{% url 'payment_home' %}" class="btn btn-secondary" type="button">Make Payment</a>
+                            </div>
+                            {% elif data.paid %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                            </svg> <b>Paid</b>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
