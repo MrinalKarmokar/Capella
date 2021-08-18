@@ -45,6 +45,8 @@ class ornamentOrder(models.Model):
     design_insight = models.CharField(max_length=100, choices=DESIGN_INSIGHT, blank=True)
     instructions = models.TextField(null=True, blank=True)
     order_status = models.CharField(max_length=20, choices=ORDER_STATUS, default="Recieved", null=True)
+    approved = models.BooleanField(default=False)
+    paid = models.BooleanField(default=False)
     order_date = models.DateField(auto_now_add=True)
     order_time = models.TimeField(auto_now_add=True)
 
