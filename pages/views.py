@@ -70,3 +70,8 @@ def bracelets_view(request, *args, **kwargs):
 def earrings_view(request, *args, **kwargs):
     context = {}
     return render(request, 'pages/earrings.html', context)
+
+#--------------------------------------------------------------------------
+def about_view(request, *args, **kwargs):
+    context={}
+    return render(request, 'pages/about.html', context)
