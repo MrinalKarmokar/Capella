@@ -46,7 +46,7 @@
     {% if forloop.counter == 1 %}
         <p class="text-center mb-3"><a href="{% url 'place_order' %}" class="btn btn-dark shadow">Place another order</a></p>
     {% endif %}
-    <div class="card p-2 m-2 {% if data.completed %}bg-secondary text-white{% endif %}">
+    <div class="card p-2 m-2 {% if data.approved and data.paid and not data.completed %}border-secondary{% elif data.approved and not data.paid and not data.completed %}border-info{% elif data.approved and data.completed %}border-success{% else %}border-light{% endif %}">
         <div id="{{data.order_id}}" class="card-body">
             <div class="row">
                 <div class="col-4">
