@@ -81,10 +81,6 @@
                                 <p class="card-text">{{flat | title}}, {{area | title}}, {%if landmark %} <br> Landmark: {{landmark | title}},{% endif %}<br> {{city | title}}, <br>{{state | title}}, {{zip}}</p>
                                 <hr>
                                 <p class="card-text">Phone: {{phone}} <br> Address type: {{type | title}}</p>
-                                {% comment %} <a href="{% url 'change_address' %}" class="btn btn-dark nav-link active" role="button" aria-disabled="true">Change Address</a> {% endcomment %}
-                                {% comment %} <div class="progress shadow-sm">
-                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div> {% endcomment %}
                             </div>
                         </div>
                         <div class="col-md-4">
