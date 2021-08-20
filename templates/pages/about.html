@@ -1,13 +1,14 @@
 {% extends '../base.html' %}
 
-{% block title %}about{% endblock title %}
+{% block title %}About Us{% endblock title %}
+
+{% block navbar2 %}{% endblock navbar2 %}
 
 {% block body %}
 
 {% load static %}
 
-<body>
-    <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    {% comment %} <nav class="navbar navbar-dark navbar-expand-md bg-dark">
         <div class="container"><a class="navbar-brand" href="#">Capella</a><button data-bs-toggle="collapse"
                 data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -22,37 +23,30 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="Capella story d-flex justify-content-center align-items-center">
-            <h2 class="Capella story">Our Story </h2>
-            <div style="text-align: center;"><br></div>
-        </div>
-        <section class="pt-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- <div class="card bg-dark overflow-hidden card-bg-scale h-400 text-center distinct"> -->
-                        <div
-                            class=" card-image-overlay d-flex align-items-center p-3 p-sm-4 bg-dark text-center distinct">
-                            <div class="w-100 my-auto">
-                                <div class="container-fluid py-5 text-white">
-                                    <h1 style="font-family:'Great Vibes';">Who are we</h1>
-                                    <p class="lead">Capella was founded in 2021 with an aim of creating beautiful
-                                        jewellery which our customers design for themselves. Our motto is <b>'You
-                                            design, We create'</b>.</p>
-                                    <p class="lead hidden-mobile">As we surveyed that people are not satisfied while
-                                        buying jewellery as many times because they don't get the design which they want
-                                        so they need to settle with similar or different designs. Capella was founded to
-                                        give
-                                        people access to fine jewellery which is designed by themselves. </p>
-                                </div>
+    </nav> {% endcomment %}
+<div class="container-fluid">
+    <div class="Capella story d-flex justify-content-center align-items-center">
+        <h2 class="Capella story">Our Story </h2>
+        <div style="text-align: center;"><br></div>
+    </div>
+    <section class="pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- <div class="card bg-dark overflow-hidden card-bg-scale h-400 text-center distinct"> -->
+                    <div
+                        class=" card-image-overlay d-flex align-items-center p-3 p-sm-4 bg-dark text-center distinct rounded-3">
+                        <div class="w-100 my-auto">
+                            <div class="container-fluid py-5 text-white">
+                                <h1 style="font-family:'Great Vibes';">Who are we</h1>
+                                <p class="lead">Capella was founded in 2021 with an aim of creating beautiful jewellery which our customers design for themselves. Our motto is <b>'You design, We create'</b>.</p>
+                                <p class="lead hidden-mobile">As we surveyed that people are not satisfied while buying jewellery as many times because they don't get the design which they want so they need to settle with similar or different designs. Capella was founded to give people access to fine jewellery which is designed by themselves. </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </section>
     <br style="user-select: auto;">
     <!--Diff section-->
@@ -161,3 +155,6 @@
             </div>
         </div>
     </section>
+</div>
+
+{% endblock body %}
