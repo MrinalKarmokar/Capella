@@ -1,41 +1,43 @@
 import razorpay
 from django.shortcuts import render
+from capella.settings import RAZORPAY_PUBLIC_KEY, RAZORPAY_PRIVATE_KEY
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Payment_info
 
 # Create your views here.
 
-def payment_home_view(request, *args, **kwargs):
-    
-    context = {
-        'firstname':request.session.get('firstname', default=""),
-        'lastname':request.session.get('lastname', default=""),
-        'email':request.session.get('email', default=""),
-        'phone':request.session.get('phone', default=""),
-    }
+def payment_home_view(request):
 
-    if request.method == "POST":
-        amount = int(request.POST.get("amount"))*100
-        client = razorpay.Client(auth=("rzp_test_vBNvIpwC6hRjBo", "394FGxSoWzXcd8KEGGtqzvTM"))
-        payment = client.order.create({'amount':amount, 'currency':'INR', 'payment_capture':'1'})
-        print("Amount", amount)
-        payment_info = Payment_info(name=request.session.get('firstname', default=""), amount=amount, payment_id=payment['id'])
-        print("PAYMENT INFO: ", payment_info)
-
+    if request.method == "GET" or "POST":
+        amount_arg = request.GET['amount']
         context = {
             'firstname':request.session.get('firstname', default=""),
             'lastname':request.session.get('lastname', default=""),
             'email':request.session.get('email', default=""),
             'phone':request.session.get('phone', default=""),
-            'amount':amount/100,
-            'payment':payment,
+            'amount': amount_arg,
         }
 
-        return render(request, "payment/payment_home.html", context)
-    
-    else:
-        return render(request, "payment/payment_home.html", context)
+        if request.method == "POST":
+            amount = int(amount_arg)*100
+            client = razorpay.Client(auth=(RAZORPAY_PUBLIC_KEY, RAZORPAY_PRIVATE_KEY))
+            payment = client.order.create({'amount':amount, 'currency':'INR', 'payment_capture':'1'})
+
+            context = {
+                'firstname':request.session.get('firstname', default=""),
+                'lastname':request.session.get('lastname', default=""),
+                'email':request.session.get('email', default=""),
+                'phone':request.session.get('phone', default=""),
+                'amount':amount/100,
+                'payment':payment,
+                'RAZORPAY_PUBLIC_KEY': RAZORPAY_PUBLIC_KEY,
+            }
+
+            return render(request, "payment/payment_home.html", context)
+        
+        else:
+            return render(request, "payment/payment_home.html", context)
 
 
 @csrf_exempt
