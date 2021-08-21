@@ -99,13 +99,17 @@
                                             {% if not data.updated_price %}
                                             <form action="{% url 'payment_home' %}" method="GET">
                                                 <div class="d-grid gap-2 d-md-block my-2">
-                                                    <button type="submit" class="btn btn-secondary" name="amount" value="{{data.budget}}">Make Payment</button>
+                                                    <input type="hidden" id="order_id" name="order_id" value="{{data.order_id}}">
+                                                    <input type="hidden" id="amount" name="amount" value="{{data.budget}}">
+                                                    <button type="submit" class="btn btn-secondary">Make Payment</button>
                                                 </div>
                                             </form>
                                             {% else %}
                                             <form action="{% url 'payment_home' %}" method="GET">
                                                 <div class="d-grid gap-2 d-md-block my-2">
-                                                    <button type="submit" class="btn btn-secondary" name="amount" value="{{data.updated_price}}">Make Payment</button>
+                                                    <input type="hidden" id="order_id" name="order_id" value="{{data.order_id}}">
+                                                    <input type="hidden" id="order_id" name="amount" value="{{data.updated_price}}">
+                                                    <button type="submit" class="btn btn-secondary">Make Payment</button>
                                                 </div>
                                             </form>
                                             {% endif %}
