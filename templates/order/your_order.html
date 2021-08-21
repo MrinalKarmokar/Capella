@@ -46,9 +46,9 @@
     <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                Current Order
-            </button>
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Current Order
+                </button>
             </h2>
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                 <div class="accordion-body">
@@ -68,21 +68,21 @@
                                         <div class="col-md-8">
                                             <div class="row">
                                             {% if data.metal_choice == "yellow_gold" %}
-                                                <p class="col-md-4">Metal: Yellow Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> Yellow Gold</p>
                                             {% elif data.metal_choice == "rose_gold" %}
-                                                <p class="col-md-4">Metal: Rose Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> Rose Gold</p>
                                             {% elif data.metal_choice == "white_gold" %}
-                                                <p class="col-md-4">Metal: White Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> White Gold</p>
                                             {% elif data.metal_choice == "silver" %}
-                                                <p class="col-md-4">Metal: Silver</p>
+                                                <p class="col-md-4"><b>Metal:</b> Silver</p>
                                             {% endif %}
                                             {% if data.gold_quality != "---" %}
-                                                <p class="col-md-4">Metal Quality: {{data.gold_quality}}</p>
+                                                <p class="col-md-4"><b>Metal Quality:</b> {{data.gold_quality}}</p>
                                             {% endif %}
-                                                <p class="col-md-4">Budget: {{data.budget}}</p>
-                                                <p>Quantity: {{data.quantity}}</p>
+                                                <p class="col-md-4">{% if not data.updated_price %}<b>Budget:</b> {{data.budget}}{% else %}<b>Updated Price:</b> {{data.updated_price}}{% endif %}</p>
+                                                <p><b>Quantity:</b> {{data.quantity}}</p>
                                             {% if data.instructions %}
-                                                <p>Instructions: {{data.instructions}}</p>
+                                                <p><b>Instructions:</b> {{data.instructions}}</p>
                                             {% endif %}
                                                 <hr>
                                                 <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
@@ -124,9 +124,9 @@
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                Completed Order
-            </button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Completed Order
+                </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                 <div class="accordion-body">
@@ -146,21 +146,21 @@
                                         <div class="col-md-8">
                                             <div class="row">
                                             {% if data.metal_choice == "yellow_gold" %}
-                                                <p class="col-md-4">Metal: Yellow Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> Yellow Gold</p>
                                             {% elif data.metal_choice == "rose_gold" %}
-                                                <p class="col-md-4">Metal: Rose Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> Rose Gold</p>
                                             {% elif data.metal_choice == "white_gold" %}
-                                                <p class="col-md-4">Metal: White Gold</p>
+                                                <p class="col-md-4"><b>Metal:</b> White Gold</p>
                                             {% elif data.metal_choice == "silver" %}
-                                                <p class="col-md-4">Metal: Silver</p>
+                                                <p class="col-md-4"><b>Metal:</b> Silver</p>
                                             {% endif %}
                                             {% if data.gold_quality != "---" %}
-                                                <p class="col-md-4">Metal Quality: {{data.gold_quality}}</p>
+                                                <p class="col-md-4"><b>Metal Quality:</b> {{data.gold_quality}}</p>
                                             {% endif %}
-                                                <p class="col-md-4">Budget: {{data.budget}}</p>
-                                                <p>Quantity: {{data.quantity}}</p>
+                                                <p class="col-md-4"><b>Budget:</b> {{data.budget}}</p>
+                                                <p><b>Quantity:</b> {{data.quantity}}</p>
                                             {% if data.instructions %}
-                                                <p>Instructions: {{data.instructions}}</p>
+                                                <p><b>Instructions:</b> {{data.instructions}}</p>
                                             {% endif %}
                                                 <hr>
                                                 <h5 class="card-text">{{first_name | title}} {{last_name | title}}</h5>
