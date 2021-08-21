@@ -154,3 +154,8 @@ LOGIN_URL = 'accounts/login'
 LOGIN_REDIRECT_URL='/home'
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+# Payment Gateway using Razorpay
+
+RAZORPAY_PUBLIC_KEY = "rzp_test_vBNvIpwC6hRjBo"
+RAZORPAY_PRIVATE_KEY = "394FGxSoWzXcd8KEGGtqzvTM"
