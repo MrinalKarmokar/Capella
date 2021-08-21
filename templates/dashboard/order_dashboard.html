@@ -52,8 +52,12 @@
                         {% elif data.metal_choice == "silver" %}
                         <td>Silver</td>
                         {% endif %}
+                        {% if data.metal_choice == "silver" %}
+                        <td>-</td>
+                        {% else %}
                         <td>{{data.gold_quality}}</td>
-                        <td>{{data.budget}}</td>
+                        {% endif %}
+                        <td>{{data.budget}} ₹</td>
                         <td>{{data.quantity}}</td>
                         {% comment %} {% if data.instructions == "" %}
                         <td>--</td>
