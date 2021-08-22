@@ -11,4 +11,5 @@ urlpatterns = [
     path('page/rings', views.rings_view, name='rings'),
     path('page/bracelets', views.bracelets_view, name='bracelets'),
     path('page/earrings', views.earrings_view, name='earrings'),
+    path('page/about', views.about_view, name='about')
 ]
