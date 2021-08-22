@@ -42,12 +42,15 @@ class ornamentOrder(models.Model):
     gold_quality = models.CharField(max_length=20, choices=GOLD_QUALITY_CHOICES, blank=True)
     quantity = models.CharField(max_length=20, choices=ORDER_QUANTITY, blank=True)
     budget = models.CharField(max_length=20, null=True, blank=True)
+    updated_price = models.CharField(max_length=20, null=True, blank=True)
     design_insight = models.CharField(max_length=100, choices=DESIGN_INSIGHT, blank=True)
     instructions = models.TextField(null=True, blank=True)
     order_status = models.CharField(max_length=20, choices=ORDER_STATUS, default="Recieved", null=True)
+    approved = models.BooleanField(default=False)
+    paid = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
     order_date = models.DateField(auto_now_add=True)
     order_time = models.TimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.account.email} | Order id: {self.order_id} | Budget: {self.budget}"
-
+        return f"Order id: {self.order_id} | {'Approved' if self.approved else 'Pendind Approval'} | {'Paid' if self.paid else 'Not Paid'} | {'Completed' if self.completed else 'Not Complete'}"

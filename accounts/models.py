@@ -17,7 +17,7 @@ class Account(models.Model):
       password = models.CharField(max_length=200, blank=False, null=False)
 
       def __str__(self):
-            return "Name: " + self.first_name +" "+ self.last_name +" | Email: "+ self.email
+            return f"Name: {self.first_name} {self.last_name} | Email: {self.email}"
 
 #----------------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ class AccountExtention(models.Model):
       created_at = models.DateTimeField(auto_now_add=True)
 
       def __str__(self):
-            return f"{self.account.email} | Phone verified: {self.phone_is_verified}"
+            return f"{self.account.email} | {'Email Verified' if self.email_is_verified else 'Unverified'}"
 
 #----------------------------------------------------------------------------
 

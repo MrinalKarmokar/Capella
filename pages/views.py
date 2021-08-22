@@ -8,6 +8,12 @@ today = datetime.datetime.now().date()
 current_time = datetime.datetime.now().strftime("%H:%M:%S")
 
 #--------------------------------------------------------------------------
+def icon_view(request, *args, **kwargs):
+    context = {}
+    return render(request, 'pages/icon.html', context)
+
+
+#--------------------------------------------------------------------------
 def index_view(request, *args, **kwargs):
     context = {
         "today" : today,
@@ -70,3 +76,8 @@ def bracelets_view(request, *args, **kwargs):
 def earrings_view(request, *args, **kwargs):
     context = {}
     return render(request, 'pages/earrings.html', context)
+
+#--------------------------------------------------------------------------
+def about_view(request, *args, **kwargs):
+    context={}
+    return render(request, 'pages/about.html', context)

@@ -10,4 +10,4 @@ class blogPost(models.Model):
     created_at = models.DateTimeField(auto_now_add=True ,null=True)
 
     def __str__(self):
-            return f"Title: {self.title}"
+            return f"{self.title}"
