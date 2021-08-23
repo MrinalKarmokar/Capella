@@ -43,7 +43,7 @@ def place_order_view(request, *args, **kwargs):
                 image = request.FILES['ref_image']
                 metal_choice = request.POST.get('metal_choice', "")
                 gold_quality = request.POST.get('gold_quality', "")
-                budget = request.POST.get('budget', "")
+                budget = request.POST.get('budget', "").replace(',',"")
                 quantity = request.POST.get('quantity', "")
                 design_insight = request.POST.get('design_insight', "")
                 instructions = request.POST.get('instructions', "")
