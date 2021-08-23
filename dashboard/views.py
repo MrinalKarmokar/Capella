@@ -16,22 +16,24 @@ from accounts.decorators import staff_check
 def dashboard_view(request, *args, **kwargs):
     '''Dashboard for all user info'''
 
-    cust = Account.objects.all()
+    cust = Account.objects.all().count()
+    count_orders = ornamentOrder.objects.all().count()
 
     context = {
         'page_title': "Dashboard",
-        'customer': cust,
+        'count_cust': cust,
+        'count_orders': count_orders,
     }
     return render(request, "dashboard/dashboard.html", context)
 
 
 #------------------------------------------------------------------------
-# @staff_check
+@staff_check
 def order_dashboard_view(request, *args, **kwargs):
     '''All info about user order'''
 
     cust = Account.objects.all()
-    orders = ornamentOrder.objects.all().order_by('id')
+    orders = ornamentOrder.objects.all().order_by('-id')
     paginator = Paginator(orders, 50, orphans=20)
     page_no = request.GET.get('page')
     page_obj = paginator.get_page(page_no)
@@ -49,7 +51,7 @@ def order_dashboard_view(request, *args, **kwargs):
 def customer_dashboard_view(request, *args, **kwargs):
     '''All Customers'''
 
-    cust = Account.objects.all().order_by('id')
+    cust = Account.objects.all().order_by('-id')
     paginator = Paginator(cust, 50, orphans=20)
     page_no = request.GET.get('page')
     page_obj = paginator.get_page(page_no)

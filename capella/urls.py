@@ -30,6 +30,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('', include('pages.urls')),
     path('order/', include('order.urls')),
+    path('payment/', include('payment_gateway.urls')),
     path('blog/', include('blog.urls')),
 ]
 
