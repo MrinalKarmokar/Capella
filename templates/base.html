@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     {% load static %}
     <link type="text/css" href="{% static 'base/css/bootstrap.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'base/css/loading.css' %}" rel="stylesheet">
     <link type="text/css" rel="icon" href="{% static 'base/icons/favicon.ico' %}">
 
     <link type="text/css" rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,16 +31,26 @@
   </head>
   <body class="bg-light">
 
+    <!-- Loading... -->
+    <div class="loader-wrapper">
+      <div class="spinner-grow text-light loader" style="width: 5rem; height: 5rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
     <!-- navbar -->
     {% block navbar %} {% include "pages/components/navbar.html" %} {% endblock navbar %}
     {% block navbar2 %} {% include "pages/components/navbar2.html" %} {% endblock navbar2 %}
 
     <!-- body -->
-    {% block body %} {% endblock body %}
+    {% block body %}
+    
+    {% endblock body %}
 
     <script src="{% static 'base/js/jquery.js' %}"></script>
     <script src="{% static 'base/js/bootstrap.js' %}"></script>
     <script src="{% static 'base/js/popper.js' %}"></script>
+    <script src="{% static 'base/js/loading.js' %}"></script>
 
   </body>
 </html>
