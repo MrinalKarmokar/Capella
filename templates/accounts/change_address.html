@@ -16,6 +16,16 @@
   </ol>
 </nav>
 
+<div class="container-fluid">
+    <!-- alerts -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+        <h5><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="{{ message.tags }}"><use xlink:href="#{{ message.tags }}"/></svg>{{message}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+
 <div class="container my-3">
     <div class="row">
         <div class="col-md-5 mx-auto my-5">
@@ -24,12 +34,6 @@
                     <h1 style="font-family:'Great Vibes';">Change your address</h1>
                 </div>
             </div>
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    <p>{{message}}</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endfor %}
             <form action="" method="POST" name="add_address" class="row g-3">
             {% csrf_token %}
                 <div class="col-12">

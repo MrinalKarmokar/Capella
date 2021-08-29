@@ -8,23 +8,32 @@
 
 {% load static %}
 
-    {% comment %} <nav class="navbar navbar-dark navbar-expand-md bg-dark">
-        <div class="container"><a class="navbar-brand" href="#">Capella</a><button data-bs-toggle="collapse"
-                data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle
-                    navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav flex-grow-1 justify-content-evenly">
-                    <li class="nav-item"><a class="nav-link active" href="#">Rings</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Earrings</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Neckwear</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Bracelets &amp; Bangles</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Solitaire</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Gemstones</a></li>
-                </ul>
-            </div>
+{% comment %} <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+    <div class="container"><a class="navbar-brand" href="#">Capella</a><button data-bs-toggle="collapse"
+            data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle
+                navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav flex-grow-1 justify-content-evenly">
+                <li class="nav-item"><a class="nav-link active" href="#">Rings</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Earrings</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Neckwear</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Bracelets &amp; Bangles</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Solitaire</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Gemstones</a></li>
+            </ul>
         </div>
-    </nav> {% endcomment %}
+    </div>
+</nav> {% endcomment %}
 <div class="container-fluid">
+
+    <!-- alerts -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+        <h5>{{message}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
     <div class="Capella story d-flex justify-content-center align-items-center">
         <h2 class="Capella story">Our Story </h2>
         <div style="text-align: center;"><br></div>
@@ -39,8 +48,13 @@
                         <div class="w-100 my-auto">
                             <div class="container-fluid py-5 text-white">
                                 <h1 style="font-family:'Great Vibes';">Who are we</h1>
-                                <p class="lead">Capella was founded in 2021 with an aim of creating beautiful jewellery which our customers design for themselves. Our motto is <b>'You design, We create'</b>.</p>
-                                <p class="lead hidden-mobile">As we surveyed that people are not satisfied while buying jewellery as many times because they don't get the design which they want so they need to settle with similar or different designs. Capella was founded to give people access to fine jewellery which is designed by themselves. </p>
+                                <p class="lead">Capella was founded in 2021 with an aim of creating beautiful jewellery
+                                    which our customers design for themselves. Our motto is <b>'You design, We
+                                        create'</b>.</p>
+                                <p class="lead hidden-mobile">As we surveyed that people are not satisfied while buying
+                                    jewellery as many times because they don't get the design which they want so they
+                                    need to settle with similar or different designs. Capella was founded to give people
+                                    access to fine jewellery which is designed by themselves. </p>
                             </div>
                         </div>
                     </div>
@@ -51,31 +65,46 @@
     <br style="user-select: auto;">
     <!--Diff section-->
     <section class="text-center give-padding" style="user-select: auto;">
+
         <div class="wrap--sm" style="user-select: auto;">
             <h2 style="user-select: auto;">How It Works<br style="user-select: auto;"><br style="user-select: auto;">
             </h2>
-            <p class="sizing" style="user-select: auto;">Creating a custom ring is easy. When you get started with
-                Forever Artisans, you will be matched with an expert jewelry designer who will help you through the
-                process from initial ideas to the finished piece. And when you’re happy with the
-                design, our artisans will hand make it, just for you. Here's how your jewelry designer will bring your
-                vision to life:<br style="user-select: auto;">
-            </p>
-            <br style="user-select: auto;">
-            <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                an unknown printer took a galley of type and scrambled it to make a type specimen
-                book.
-            </p>
-            <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                an unknown printer took a galley of type and scrambled it to make a type specimen
-                book.
-            </p>
-            <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                an unknown printer took a galley of type and scrambled it to make a type specimen
-                book.
-            </p>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <p class="sizing" style="user-select: auto;">Creating a custom ring is easy. When you get started
+                        with
+                        Forever Artisans, you will be matched with an expert jewelry designer who will help you through
+                        the
+                        process from initial ideas to the finished piece. And when you’re happy with the
+                        design, our artisans will hand make it, just for you. Here's how your jewelry designer will
+                        bring
+                        your
+                        vision to life:<br style="user-select: auto;">
+                    </p>
+                    <br style="user-select: auto;">
+                    <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s,
+                        when
+                        an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book.
+                    </p>
+                    <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s,
+                        when
+                        an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book.
+                    </p>
+                    <p class="sizing" style="user-select: auto;">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s,
+                        when
+                        an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
     <br style="user-select: auto;">
@@ -91,24 +120,42 @@
             </div>
         </div>
     </section>
+    <!--FOUNDERS SECTION-->
     <section>
-        <h1 class="text-center flex-grow-1 align-items-center">Heading</h1>
-        <p class="text-center flex-grow-1 align-items-center">Paragraph</p>
-        <div class="row">
-            <div class="col text-center"><img class="justify-content-center" src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone">
-                <p class="lead">Paragraph</p>
-            </div>
-            <div class="col text-center">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Title</h4>
-                        <h6 class="text-text-muted card-subtitle mb-2">Subtitle</h6>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+        <div class="container d-flex justify-content-around">
+            <div class="row">
+                <div class="col-sm my-2">
+                    <div class="card shadow lift rounded">
+                        <img src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" class="img-fluid">
+                        <div class="card-body py-4">
+                            <p class="card-text"><strong>Mrinal Karmokar</strong><br><span class="small">CO - funder and
+                                    CEO</span></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col text-center"><img src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone">
-                <p class="lead text-center">Paragraph</p>
+                <div class="col-sm my-2">
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Title</h4>
+                                <h6 class="text-text-muted card-subtitle mb-2">Subtitle</h6>
+                                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo
+                                    odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                                    at eget metus.</p><a class="card-link" href="#">Link</a><a class="card-link"
+                                    href="#">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm my-2">
+                    <div class="card shadow lift rounded">
+                        <img src="https://source.unsplash.com/200x200/?jewellery,diamond,gemstone" class="img-fluid">
+                        <div class="card-body py-4">
+                            <p class="card-text"><strong>Mrinal Karmokar</strong><br><span class="small">CO - funder and
+                                    CEO</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -117,39 +164,55 @@
             <h2 class="text-center mb-3">Lorem or Spell Words?</h2>
             <div class="psd-line pos-rel" style="position:relative;">
                 <div class="row align-items-center">
-                    <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-1 p-5">
-                        <h2 class="grey-text d-none">Üyelik Tipini Seçerek Kayıt Olun</h2><img class="img-fluid" src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
+                    <div
+                        class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-1 p-5">
+                        <h2 class="grey-text d-none">Üyelik Tipini Seçerek Kayıt Olun</h2><img class="img-fluid"
+                            src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
                     </div>
                     <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-left1">
                         <h1>Heading</h1>
-                        <p class="m-0 text-center text-sm-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi nibh, tristique et sagittis in, aliquet id metus. In eleifend et dolor eget tincidunt.<br></p>
+                        <p class="m-0 text-center text-sm-start">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Cras mi nibh, tristique et sagittis in, aliquet id metus. In eleifend et dolor eget
+                            tincidunt.<br></p>
                     </div>
                 </div>
                 <div class="row flex-column-reverse align-items-center flex-sm-row">
                     <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-right1">
                         <h1 class="text-end">Heading</h1>
-                        <p class="m-0 text-center text-sm-end">Etiam eget nulla ut elit placerat commodo. Etiam vestibulum consectetur quam eget pretium. Sed in suscipit augue. Nunc venenatis porttitor enim a hendrerit.&nbsp;<br></p>
+                        <p class="m-0 text-center text-sm-end">Etiam eget nulla ut elit placerat commodo. Etiam
+                            vestibulum consectetur quam eget pretium. Sed in suscipit augue. Nunc venenatis porttitor
+                            enim a hendrerit.&nbsp;<br></p>
                     </div>
-                    <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-2 p-5">
-                        <h2 class="grey-text d-none">Neye İhtiyacınız Varsa Belirtin</h2><img class="img-fluid" src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
+                    <div
+                        class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-2 p-5">
+                        <h2 class="grey-text d-none">Neye İhtiyacınız Varsa Belirtin</h2><img class="img-fluid"
+                            src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
                     </div>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-3 p-5">
-                        <h2 class="grey-text d-none">Size Uygun Teklifi Seçin</h2><img class="img-fluid" src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
+                    <div
+                        class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-3 p-5">
+                        <h2 class="grey-text d-none">Size Uygun Teklifi Seçin</h2><img class="img-fluid"
+                            src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
                     </div>
                     <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-left2">
                         <h1>Heading</h1>
-                        <p class="m-0 text-center text-sm-start">Integer cursus tincidunt mauris, imperdiet bibendum augue dapibus tempor. Pellentesque rhoncus neque erat. Nam at metus urna. Nullam rhoncus odio eu sem fermentum dictum.<br></p>
+                        <p class="m-0 text-center text-sm-start">Integer cursus tincidunt mauris, imperdiet bibendum
+                            augue dapibus tempor. Pellentesque rhoncus neque erat. Nam at metus urna. Nullam rhoncus
+                            odio eu sem fermentum dictum.<br></p>
                     </div>
                 </div>
                 <div class="row flex-column-reverse align-items-center flex-sm-row">
                     <div class="col-12 col-sm-6 d-flex flex-column justify-content-center p-5 psd-right2">
                         <h1 class="text-end">Heading</h1>
-                        <p class="m-0 text-center text-sm-end">Cras iaculis, eros sit amet congue tincidunt, justo magna iaculis urna, quis aliquet tortor ipsum et purus. Vivamus gravida tristique velit. Sed non mi at massa dignissim placerat.<br></p>
+                        <p class="m-0 text-center text-sm-end">Cras iaculis, eros sit amet congue tincidunt, justo magna
+                            iaculis urna, quis aliquet tortor ipsum et purus. Vivamus gravida tristique velit. Sed non
+                            mi at massa dignissim placerat.<br></p>
                     </div>
-                    <div class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-4 p-5">
-                        <h2 class="grey-text d-none">Piyasa Analizi Yaptırın</h2><img class="img-fluid" src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
+                    <div
+                        class="col-12 col-sm-6 d-flex flex-row justify-content-center align-items-center intro-card-4 p-5">
+                        <h2 class="grey-text d-none">Piyasa Analizi Yaptırın</h2><img class="img-fluid"
+                            src="https://source.unsplash.com/400x400/?jewellery,diamond,gemstone">
                     </div>
                 </div>
             </div>

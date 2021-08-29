@@ -34,13 +34,14 @@
                         </div>
                     </div>
                     
+                    <!-- alerts -->
                     {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                            <p>{{message}}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+                        <h5><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="{{ message.tags }}"><use xlink:href="#{{ message.tags }}"/></svg>{{message}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     {% endfor %}
-                    
+
                     <form action="" method="POST" name="login">{% csrf_token %}
                         <div class="form-group my-3">
                             <label for="exampleInputEmail1">Email / Phone no.</label>
@@ -56,7 +57,8 @@
                             </label>
                         </div> {% endcomment %}
                         <div class="col-md-12 text-center my-4">
-                            <button type="submit" name="loginbtn" class="btn btn-secondary shadow">Login</button>
+                            <button type="submit" name="loginbtn" class="btn btn-secondary mb-3 shadow">Login</button>
+                            <p class="text-center">By continuing, you agree to Capella's <a href="#" class="link-info">Conditions of Use</a> and <a href="#" class="link-info">Privacy Notice</a>.</p>
                         </div>
                         <hr class="featurette-divider">
                         <div class="form-group my-4">

@@ -1,6 +1,6 @@
 Capella.session.sql
 pywhatkit_dbs.txt
-media/
+media/*
 */*/*/__pycache__/
 */*/__pycache__/
 */__pycache__/

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'pages/css/foot.css' %}" />
 
 <footer class="footer-dark">
-    {% include 'pages/components/guideModal.html' %}
+    {% comment %} {% include 'pages/components/guideModal.html' %} {% endcomment %}
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-3 col-lg-2 item">
@@ -12,13 +12,13 @@
                 <h3>Know your Jewellery</h3>
                 <ul>
                     <li>
-                        <a data-bs-toggle="modal" href="" data-bs-target="#diamondguide">Diamond Guide</a>
+                        <a href="{% url 'jewellery_guide' %}">Diamond Guide</a>
                     </li>
                     <li>
-                        <a data-bs-toggle="modal" href="" data-bs-target="#jewelleryguide">Jewellery Guide</a>
+                        <a href="{% url 'jewellery_guide' %}">Jewellery Guide</a>
                     </li>
                     <li>
-                        <a data-bs-toggle="modal" href="" data-bs-target="#designguide">Design Guide</a>
+                        <a href="{% url 'jewellery_guide' %}">Design Guide</a>
                     </li>
                 </ul>
             </div>

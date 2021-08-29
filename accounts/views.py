@@ -589,15 +589,21 @@ def create_user_account_view(request, *args, **kwargs):
         try:
             if form.is_valid():
                 if password1 == password2:
-                    password1 = make_password(password1)
-                    instance_ac = Account(first_name=first_name, last_name=last_name, phone=phone, email=email, password=password1)
-                    instance_ac.save()
-                    cust_ac = Account.objects.filter(email=email).first()
-                    id = cust_ac.id
-                    instance_acx = AccountExtention(account_id=id, token_email=token_email)
-                    instance_acx.save()
-                    email_verification(request, email, token_email, first_name)
-                    return redirect('login')
+                    try:
+                        password1 = make_password(password1)
+                        instance_ac = Account(first_name=first_name, last_name=last_name, phone=phone, email=email, password=password1)
+                        instance_ac.save()
+                        cust_ac = Account.objects.filter(email=email).first()
+                        id = cust_ac.id
+                        instance_acx = AccountExtention(account_id=id, token_email=token_email)
+                        instance_acx.save()
+                        email_verification(request, email, token_email, first_name)
+                        return redirect('login')
+
+                    except Exception as e:
+                        print(e)
+                        messages.warning(request, "Account with this Phone No. already exists")
+                        return redirect('signup')
 
                 else:
                     messages.warning(request, "Password does'nt match!")
