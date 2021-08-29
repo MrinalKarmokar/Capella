@@ -4,16 +4,6 @@ element.style {
 }
 
 .chapternav {
-    background-color: #fbfbfd;
-}
-
-.chapternav {
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-    background: rgba(245, 245, 247, 0.6);
-}
-
-.chapternav {
     background: rgba(245, 245, 247, 0.7);
     padding: 0;
     padding-top: 8px;
@@ -22,7 +12,7 @@ element.style {
     height: 100px;
     z-index: 9987;
     width: 100%;
-    position: relative;
+    position: absolute;
     overflow: hidden;
 }
 
