@@ -84,5 +84,12 @@ def about_view(request, *args, **kwargs):
 
 #--------------------------------------------------------------------------
 def jewellery_guide_view(request, *args, **kwargs):
-    context={}
+    
+    first_name = request.session.get('first_name', default="Guest")
+
+    context = {
+        "today" : today,
+        "time" : current_time,
+        'first_name' : first_name,
+    }
     return render(request, 'pages/jewellery_guide.html', context)

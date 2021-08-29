@@ -25,6 +25,15 @@
         </div>
     </nav> {% endcomment %}
 <div class="container-fluid">
+
+    <!-- alerts -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+        <h5>{{message}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
     <div class="Capella story d-flex justify-content-center align-items-center">
         <h2 class="Capella story">Our Story </h2>
         <div style="text-align: center;"><br></div>
