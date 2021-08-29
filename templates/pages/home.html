@@ -8,16 +8,16 @@
 
 <link type="text/css" href="{% static 'pages/css/home.css' %}" rel="stylesheet">
 
-
-<!-- alerts -->
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-    <p>{{message}}</p>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-
 <div class="container-fluid bg-light">
+
+    <!-- alerts -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+        <h5><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="{{ message.tags }}"><use xlink:href="#{{ message.tags }}"/></svg>{{message}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    
     <div id="carouselExampleCaptions" class="carousel slide my-2" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"

@@ -21,6 +21,16 @@
 
 {% endblock header %}
 
+<div class="container-fluid">
+    <!-- alerts -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm" role="alert">
+        <h5><svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="{{ message.tags }}"><use xlink:href="#{{ message.tags }}"/></svg>{{message}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+
 <div class="container-fluid text-light">
   <div class="row">
     <div class="col-md-5 mx-auto my-5">
@@ -31,29 +41,22 @@
               <h1>Create your Capella Account</h1>
             </div>
           </div>
-          <div>
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-              <p>{{message}}</p>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
-          </div>
+
           <form method="POST" action="" name="registration">{% csrf_token %}
             <div class="form-group text-start">
               <div class="row my-2">
                 <div class="col">
                   <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                  <input type="text" name="first_name" class="form-control" placeholder="First name" aria-describedby="emailHelp" aria-label="First name" required>
+                  <input type="text" name="first_name" class="form-control" placeholder="First name*" aria-describedby="emailHelp" aria-label="First name" required>
                 </div>
                 <div class="col">
                   <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-                  <input type="text" name="last_name" class="form-control" placeholder="Last name" aria-describedby="emailHelp" aria-label="Last name" required>
+                  <input type="text" name="last_name" class="form-control" placeholder="Last name" aria-describedby="emailHelp" aria-label="Last name">
                 </div>
               </div>
               <div class="form-group my-3">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email*" required>
               </div>
               <div class="row my-2">
                 <label for="phoneInput" class="form-label my-1">Phone No.</label>
@@ -61,7 +64,7 @@
                   <input class="form-control" value="+91" aria-label="country-code" readonly>
                 </div>
                 <div class="col-9 col-md-10">
-                  <input class="form-control" name="phone" type="tel" placeholder="Phone No. (Whatsapp)" aria-label="default input example" required>
+                  <input class="form-control" name="phone" type="tel" placeholder="Phone No. (Whatsapp)*" aria-label="default input example" required>
                 </div>
               </div>
               <div class="form-group my-3">
@@ -82,6 +85,19 @@
                   <p class="text-center">
                     <a href="{% url 'login' %}" id="signin">Already have an account?</a>
                   </p>
+                </div>
+              </div>
+              <div>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="text-center"><a href="#" class="link-info">Condition of Use</a></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-center"><a href="#" class="link-info">Privacy Notice</a></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-center"><a href="#" class="link-info">Help</a></p>
+                  </div>
                 </div>
               </div>
             </div>
